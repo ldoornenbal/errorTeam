@@ -36,7 +36,7 @@ void turn(uint8_t port1, uint8_t port2, int32_t timeSec, uint8_t power){
     
     arnold.set_motor_power(port1, power);
     arnold.set_motor_power(port2, -power);
-    sleep(timeSec);
+    usleep(timeSec);
     stopArnold(port1, port2);
     
 }
@@ -79,7 +79,7 @@ int main()
                 forwardBack(PORT_B, PORT_C, -Power);
             }
         }else if(userInput == "turn"){
-            cout << "Enter degrees" << endl;
+            cout << "Enter time, in μs" << endl;
             cin >> userInput;
             stringstream inputStreamTurn(userInput);
             if(inputStreamTurn >> Degrees){
