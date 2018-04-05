@@ -68,7 +68,7 @@ int main(){
             }
             else{
                 //set left motor speed to normal value
-                movement(90,90;
+                movement(90,90);
             }
 		}
 		else{
