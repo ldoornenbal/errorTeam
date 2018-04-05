@@ -9,3 +9,8 @@ Gebruikte onderdelen:
   - 31313 Mindstorms EV3
   - BrickPi met Raspberry Pi model B
   - Oplaadpack
+
+Compilen en runnen:
+  - git clone https://github.com/leeuwenjim/errorTeam.git
+  - chmod +x buildarnold.sh
+  - ./buildarnold.sh
