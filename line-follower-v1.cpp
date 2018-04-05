@@ -46,7 +46,7 @@ int main(){
         //if(BP.get_sensor(PORT_3, Ultrasonic) == 0){
 		//	cout << "Ultrasonic sensor sees this distance in cm: " << Ultrasonic.cm << endl;
 		//}
-		if(BP.get_sensor(BWsensorright, bwright.reflected) == 0){
+		if(BP.get_sensor(BWsensorright, bwright) == 0){
 			cout << "Right sees " << bwright.reflected << endl;
             if(bwright.reflected > 2100){
                 //set right motor speed to lower value
@@ -60,7 +60,7 @@ int main(){
         else{
             cout << "Right light sensor not working!" << endl;
         }
-		if(BP.get_sensor(BWsensorleft, bwleft.reflected) == 0){
+		if(BP.get_sensor(BWsensorleft, bwleft) == 0){
 			cout << "Left sees " << bwleft.reflected << endl;
             if(bwleft.reflected > 2100){
                 //set left motor speed to lower value
