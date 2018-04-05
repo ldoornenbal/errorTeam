@@ -17,6 +17,12 @@ uint8_t ultrasonic = PORT_3;
 
 void exit_signal_handler(int signo);
 
+void movement(uint8_t powerleft, uint8_t powerright){
+    // Move Arnold forward
+    BP.set_motor_power(motorleft, powerleft);
+    BP.set_motor_power(motorright, powerright);
+}
+
 int main(){
 	signal(SIGINT, exit_signal_handler); //exit function for ctrl c
 	
@@ -32,7 +38,7 @@ int main(){
 	sensor_light_t bwleft;
 	sensor_light_t bwright;
 	
-    movement(0x5A,0x5A);
+    movement(90,90);
     
 	while (true){
 		error = 0;
@@ -44,11 +50,11 @@ int main(){
 			cout << "Right sees " << bwright.reflected << endl;
             if(bwright.reflected > 2100){
                 //set right motor speed to lower value
-                movement(0x5A,0x3C);
+                movement(90,60);
             }
             else{
                 //set right motor speed to normal value
-                movement(0x5A,0x5A);
+                movement(90,90);
             }
 		}
         else{
@@ -58,11 +64,11 @@ int main(){
 			cout << "Left sees " << bwleft.reflected << endl;
             if(bwleft.reflected > 2100){
                 //set left motor speed to lower value
-                movement(0x3C,0x5A);
+                movement(60,90);
             }
             else{
                 //set left motor speed to normal value
-                movement(0x5A,0x5A);
+                movement(90,90;
             }
 		}
 		else{
@@ -80,8 +86,3 @@ void exit_signal_handler(int signo){
 	}
 }
 
-void movement(uint8_t powerleft, uint8_t powerright){
-    // Move Arnold forward
-    BP.set_motor_power(motorleft, powerleft);
-    BP.set_motor_power(motorright, powerright);
-}
