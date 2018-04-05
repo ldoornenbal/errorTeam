@@ -32,7 +32,7 @@ int main(){
 	sensor_light_t bwleft;
 	sensor_light_t bwright;
 	
-    movement(90,90);
+    movement(0x5A,0x5A);
     
 	while (true){
 		error = 0;
@@ -44,11 +44,11 @@ int main(){
 			cout << "Right sees " << bwright.reflected << endl;
             if(bwright.reflected > 2100){
                 //set right motor speed to lower value
-                movement(90,60);
+                movement(0x5A,0x3C);
             }
             else{
                 //set right motor speed to normal value
-                movement(90,90);
+                movement(0x5A,0x5A);
             }
 		}
         else{
@@ -58,11 +58,11 @@ int main(){
 			cout << "Left sees " << bwleft.reflected << endl;
             if(bwleft.reflected > 2100){
                 //set left motor speed to lower value
-                movement(60,90);
+                movement(0x3C,0x5A);
             }
             else{
                 //set left motor speed to normal value
-                movement(90,90);
+                movement(0x5A,0x5A);
             }
 		}
 		else{
