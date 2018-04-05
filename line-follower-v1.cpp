@@ -48,7 +48,7 @@ int main(){
 			cout << "Right sees " << bwright.reflected << endl;
             if(bwright.reflected > 2100){
                 //set right motor speed to lower value
-                movement(90,-10);
+                movement(60,-10);
             }
             else{
                 //set right motor speed to normal value
@@ -62,7 +62,7 @@ int main(){
 			cout << "Left sees " << bwleft.reflected << endl;
             if(bwleft.reflected > 2100){
                 //set left motor speed to lower value
-                movement(-10,90);
+                movement(-10,60);
             }
             else{
                 //set left motor speed to normal value
