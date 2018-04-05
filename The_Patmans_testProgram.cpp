@@ -37,6 +37,7 @@ void turn(uint8_t port1, uint8_t port2, int32_t timeSec, uint8_t power){
     arnold.set_motor_power(port1, power);
     arnold.set_motor_power(port2, -power);
     sleep(timeSec);
+    stopArnold(port1, port2);
     
 }
 
