@@ -1,0 +1,10 @@
+//Methode 1:
+STAP1: Zet beide reflectie-sensoren op het witte oppervlak en meet de waarde die gegeven word
+STAP2: Zet beide reflectie-sensoren op de zwarte lijn en meet de waarde
+
+//Methode 2:
+STAP1: Zet de robot op de lijn dat de lijn tussen de sensoren zit, meet de waardes voor 2 a 3 seconden en onthoudt de minima en maxima
+STAP2: Laat de robot langzaam naar links draaien tot de waarde van de rechter reflectie-sensor veranderd, onthoud hoeveel hij boven de minima of maxima zit
+STAP3: Laat de robot langzaam naar rechts draaien tot de waarde van de linker reflectie-sensor veranderd, onthoud hoeveel hij boven de minima of maxima zit
+STAP4: Draai de robot terug tot beide sensoren de lijn niet zien.
+
