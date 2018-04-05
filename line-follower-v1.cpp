@@ -10,8 +10,8 @@ BrickPi3 BP;
 // give portnumbers
 uint8_t motorleft = PORT_C;
 uint8_t motorright = PORT_B;
-uint8_t BWsensorleft = PORT_2;
-uint8_t BWsensorright = PORT_1;
+uint16_t BWsensorleft = PORT_2;
+uint16_t BWsensorright = PORT_1;
 uint8_t motortop = PORT_D;
 uint8_t ultrasonic = PORT_3;
 
