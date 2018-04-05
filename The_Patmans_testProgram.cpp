@@ -47,6 +47,11 @@ int main()
     uint8_t Power = 0;
     uint32_t Degrees = 0;
     string userInput;
+    uint8_t portRight = PORT_B;
+    uint8_t portLeft = PORT_C;
+    
+    cout << "Hello, I am Arnold!" << endl;
+    
     while(true){
         cout << "Type options for power options, break to terminate the program, stop to stop Arnold, move to move Arnold forward or back, turn to turn Arnold." << endl;
         cin >> userInput;
@@ -69,22 +74,22 @@ int main()
         }else if(userInput == "break"){
             break;
         }else if(userInput == "stop"){
-            stopArnold(PORT_B, PORT_C);
+            stopArnold(portRight, portLeft);
         }else if(userInput == "move"){
             cout << "Type back to move Arnold backwards, type fwd to move Arnold forward, type anything else to move him forward for a limited time" << endl;
             cin >> userInput;
             if(userInput == "back"){
-                forwardBack(PORT_B, PORT_C, -Power);
+                forwardBack(portRight, portLeft, -Power);
             }else if(userInput == "fwd"){
-                forwardBack(PORT_B, PORT_C, Power);
+                forwardBack(portRight, portLeft, Power);
             }else{
                 cout << "Enter time in ms" << endl;
                 cin >> userInput;
                 stringstream inputStreamTurn(userInput);
                 if(inputStreamTurn >> Degrees){
-                    forwardBack(PORT_B, PORT_C, Power);
+                    forwardBack(portRight, portLeft, Power);
                     usleep(1000*Degrees); // usleep uses microseconds, we want miliseconds so: 1000*miliseconds = microseconds.
-                    stopArnold(PORT_B, PORT_C);
+                    stopArnold(portRight, portLeft);
                 }
             }
         }else if(userInput == "turn"){
@@ -92,7 +97,7 @@ int main()
             cin >> userInput;
             stringstream inputStreamTurn(userInput);
             if(inputStreamTurn >> Degrees){
-                turn(PORT_B, PORT_C, Degrees, Power);
+                turn(portRight, portLeft, Degrees, Power);
                 continue;
             }
             cout << "invalid conversion" << endl;
