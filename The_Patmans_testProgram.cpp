@@ -71,12 +71,21 @@ int main()
         }else if(userInput == "stop"){
             stopArnold(PORT_B, PORT_C);
         }else if(userInput == "move"){
-            cout << "Type back to move Arnold backwards, type anything else to move him forward" << endl;
+            cout << "Type back to move Arnold backwards, type fwd to move Arnold forward, type anything else to move him forward for a limited time" << endl;
             cin >> userInput;
-            if(userInput != "back"){
+            if(userInput == "back"){
+                forwardBack(PORT_B, PORT_C, -Power);
+            }else if(userInput == "fwd"){
                 forwardBack(PORT_B, PORT_C, Power);
             }else{
-                forwardBack(PORT_B, PORT_C, -Power);
+                cout << "Enter time in ms" << endl;
+                cin >> userInput;
+                stringstream inputStreamTurn(userInput);
+                if(inputStreamTurn >> Degrees){
+                    forwardBack(PORT_B, PORT_C, Power);
+                    usleep(1000*Degrees); // usleep uses microseconds, we want miliseconds so: 1000*miliseconds = microseconds.
+                    stopArnold(PORT_B, PORT_C);
+                }
             }
         }else if(userInput == "turn"){
             cout << "Enter time, in μs" << endl;
