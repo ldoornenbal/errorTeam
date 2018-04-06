@@ -103,6 +103,15 @@ int main(){
 	
 	sensor_light_t bwleft;
 	sensor_light_t bwright;
+    
+    vector<int> bwvalues = calibrar();
+    
+    cout << "If you're ready press 'y' followed by enter" << endl;
+    cin >> go;
+    while(go != "y"){
+    cout << "If you're ready press 'y' followed by enter" << endl;
+    cin >> go;
+    }
 	
 	while (true){
 		error = 0;
