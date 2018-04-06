@@ -107,8 +107,17 @@ int main(){
 	sensor_light_t bwleft;
 	sensor_light_t bwright;
     
-    vector<int> bwvalues = calibrar();
-    
+    vector<uint16_t> bwvalues = calibrar();
+    uint16_t whiteLeft = bwvalues[0];
+    uint16_t whiteRight = bwvalues[1];
+    uint16_t blackLeft = bwvalues[2];
+    uint16_t blackLeft = bwvalues[3];
+
+    cout << "White left:" << whiteLeft << endl;
+    cout << "White right:" << whiteRight << endl;
+    cout << "Black left:" << blackLeft << endl;
+    cout << "Black Right:" << blackRight << endl;
+	
     cout << "If you're ready press 'y' followed by enter" << endl;
     cin >> go;
     while(go != "y"){
