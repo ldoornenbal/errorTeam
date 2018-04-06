@@ -24,6 +24,7 @@ void movement(uint8_t powerleft, uint8_t powerright){
 }
 
 vector<int> calibrar(){
+    string ready;
     cout << "Place linebot on position with straight line (make sure both Black/White sensors are on white)" << endl;
     cout << "Are you ready (yes?): " << endl;
     cin >> ready;
@@ -95,6 +96,7 @@ int main(){
 	BP.detect(); //make sure Pi is communicating and up to date
 	
 	int error;
+    string go;
     
     //setting up sensors
 	//BP.set_sensor_type(PORT_3, SENSOR_TYPE_NXT_ULTRASONIC);
