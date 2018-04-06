@@ -96,7 +96,7 @@ int main(){
 	BP.detect(); //make sure Pi is communicating and up to date
 	
 	int error;
-    string go;
+    	string ready;
     
     //setting up sensors
 	//BP.set_sensor_type(PORT_3, SENSOR_TYPE_NXT_ULTRASONIC);
