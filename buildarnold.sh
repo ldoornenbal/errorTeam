@@ -6,6 +6,6 @@
 # git checkout master
 # git checkout development
 
-git pull
+#git pull
 g++ arnold.cpp BrickPi3.cpp -o arnoldcompiled
 ./arnoldcompiled
