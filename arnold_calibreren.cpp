@@ -24,7 +24,7 @@ void movement(uint8_t powerleft, uint8_t powerright){
     BP.set_motor_power(motorright, powerright);
 }
 
-vector <int> calibrar(){
+vector <uint16_t> calibrar(){
     string ready;
     cout << "Place linebot on position with straight line (make sure both Black/White sensors are on white)" << endl;
     cout << "Are you ready (yes?): " << endl;
@@ -35,10 +35,10 @@ vector <int> calibrar(){
     BP.getsensor(BWsensorleft, left);
     BP.getsensor(BWsensorright, right);
     vector<int> final;
-    int leftwhite1 = left.reflected;
-    int rightwhite1 = right.reflected;
-    int leftblack1 = left.reflected;
-    int rightblack1 = right.reflected;
+    uint16_t leftwhite1 = left.reflected;
+    uint16_t rightwhite1 = right.reflected;
+    uint16_t leftblack1 = left.reflected;
+    uin16_t rightblack1 = right.reflected;
 
 
 
@@ -48,12 +48,12 @@ vector <int> calibrar(){
     movement(50,0);
     if(left.reflected > (leftwhite+400)){
         movement(0,0);
-        int leftblack1 = left.reflected;
+        uint16_t leftblack1 = left.reflected;
     }
     movement(0,50);
     if(right.reflected > (rightwhite+400)) {
         movement(0, 0);
-        int rightblack1 = right.reflected;
+        uint16_t rightblack1 = right.reflected;
     }
     movement(50,0);
     if(left.reflected < 2000 && right.reflected < 2000){
@@ -69,12 +69,12 @@ vector <int> calibrar(){
     movement(50,0);
     if(left.reflected > (leftwhite+400)){
         movement(0,0);
-        int leftblack2 = left.reflected;
+        uint16_t leftblack2 = left.reflected;
     }
     movement(0,50);
     if(right.reflected > (rightwhite+400)) {
         movement(0, 0);
-        int rightblack2 = right.reflected;
+        uint16_t rightblack2 = right.reflected;
     }
     movement(50,0);
     if(left.reflected < 2000 && right.reflected < 2000){
@@ -83,11 +83,11 @@ vector <int> calibrar(){
     movement(-50,-50);
     sleep(4000000);
     movement(0,0);
-    int leftwhite = (leftwhite1 + leftwhite2)/2;
-    int rightwhite = (rightwhite1 + rightwhite2)/2;
-    int leftblack = (leftblack1 + leftblack2)/2;
-    int rightblack = (rightblack1 + rightblack2)/2;
-    vector<int> final (leftwhite ,rightwhite, leftblack, rightblack);
+    uint16_t leftwhite = (leftwhite1 + leftwhite2)/2;
+    uint16_t rightwhite = (rightwhite1 + rightwhite2)/2;
+    uint16_t leftblack = (leftblack1 + leftblack2)/2;
+    uint16_t rightblack = (rightblack1 + rightblack2)/2;
+    vector<uint16_t> final (leftwhite ,rightwhite, leftblack, rightblack);
     return final;
 }
 
