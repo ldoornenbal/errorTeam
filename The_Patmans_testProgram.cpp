@@ -105,5 +105,6 @@ int main()
         
     }
     
+    arnold.reset_all();
 	return 0;
 }
