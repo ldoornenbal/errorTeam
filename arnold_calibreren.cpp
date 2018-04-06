@@ -3,6 +3,7 @@
 #include <unistd.h> //for sleep
 #include <signal.h> //for exit signals
 #include <iomanip> //for setw and setprecision
+#include <vector>
 using namespace std;
 
 BrickPi3 BP;
@@ -23,7 +24,7 @@ void movement(uint8_t powerleft, uint8_t powerright){
     BP.set_motor_power(motorright, powerright);
 }
 
-vector<int> calibrar(){
+vector <int> calibrar(){
     string ready;
     cout << "Place linebot on position with straight line (make sure both Black/White sensors are on white)" << endl;
     cout << "Are you ready (yes?): " << endl;
@@ -96,7 +97,7 @@ int main(){
 	BP.detect(); //make sure Pi is communicating and up to date
 	
 	int error;
-    	string ready;
+    	string go;
     
     //setting up sensors
 	//BP.set_sensor_type(PORT_3, SENSOR_TYPE_NXT_ULTRASONIC);
