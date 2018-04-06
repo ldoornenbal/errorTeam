@@ -56,7 +56,7 @@ vector <uint16_t> calibrar(){
         uint16_t rightblack1 = right.reflected;
     }
     movement(50,0);
-    if(left.reflected < 2000 && right.reflected < 2000){
+    if(left.reflected < 1900 && right.reflected < 1900){
         movement(0,0);
     }
     //measure Black white sensors on spot two
@@ -77,7 +77,7 @@ vector <uint16_t> calibrar(){
         uint16_t rightblack2 = right.reflected;
     }
     movement(50,0);
-    if(left.reflected < 2000 && right.reflected < 2000){
+    if(left.reflected < 1900 && right.reflected < 1900){
         movement(0,0);
     }
     movement(-50,-50);
